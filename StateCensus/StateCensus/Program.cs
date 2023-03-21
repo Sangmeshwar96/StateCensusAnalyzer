@@ -10,7 +10,8 @@ namespace StateCensus
         public CSVStateCensus csvStateCensus = new CSVStateCensus();
         public static void Main(string[] args)
         {
-            CSVStateCensus.ReadStateCensusData(stateDataFilePath);
+            //CSVStateCensus.ReadStateCensusData(stateDataFilePath);
+            CSVStateCensus.ReadStateCensusCode(stateCodeFilePath);
 
         }
     }
