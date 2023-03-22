@@ -11,7 +11,7 @@ namespace StateCensus
 {
     public class CSVStateCensus
     {
-        public static void ReadStateCensusData(String stateDataFilePath)
+        public int ReadStateCensusData(String stateDataFilePath)
         {
             using (var reader = new StreamReader(stateDataFilePath))
             {
@@ -22,6 +22,7 @@ namespace StateCensus
                     {
                         Console.WriteLine($"{record.State} {record.Population}{record.AreaInSqKm}{record.DensityPerSqKm}");
                     }
+                    return records.Count();
                 }
             }
         }
