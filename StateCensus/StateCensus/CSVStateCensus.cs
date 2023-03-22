@@ -13,6 +13,10 @@ namespace StateCensus
     {
         public int ReadStateCensusData(String stateDataFilePath)
         {
+            if (!File.Exists(stateDataFilePath))
+            {
+                throw new CensusCustomException(CensusCustomException.CensusCustomExceptionType.INCORRECT_FILE, "Incorrect file Path");
+            }
             using (var reader = new StreamReader(stateDataFilePath))
             {
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
